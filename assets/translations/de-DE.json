@@ -19,5 +19,7 @@
     "favorite_hotel_success": "{} hinzugefügen",
     "unfavorite_hotel_success": "{} entfernen",
     "fetch_favorite_hotels_error": "Favoriten-Hotels fehlgeschlagen",
-    "fetch_hotels_error": "Hotels fehlgeschlagen"
+    "fetch_hotels_error": "Hotels fehlgeschlagen",
+    "change_language": "Sprache wechseln",
+    "welcome_text": "Willkommen in der App,\n\nwo Sie die besten Hotels in der Welt finden. Um ein Hotel zu finden, klicken Sie auf die Hotels im Menu."
 }

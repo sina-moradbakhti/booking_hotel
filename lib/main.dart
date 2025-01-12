@@ -16,6 +16,8 @@ import 'package:booking_hotel/features/overview/presentation/pages/overview_page
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import 'core/bloc/locale_cubit.dart';
+import 'core/local/local_data_source_manager.dart';
 import 'features/hotels/presentation/bloc/hotel_bloc.dart';
 
 part 'router.dart';
@@ -26,7 +28,16 @@ void main() async {
   await App.setupLocalCache();
   await App.setupLocator();
 
-  runApp(App.buildApp(const MyApp()));
+  runApp(
+    BlocProvider(
+      create: (_) => LocaleCubit(
+        sl<LocalDataSourceManager>(),
+      ),
+      child: App.buildApp(
+        const MyApp(),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

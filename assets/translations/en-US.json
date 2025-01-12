@@ -19,5 +19,7 @@
     "favorite_hotel_success": "{} added to favorites",
     "unfavorite_hotel_success": "{} removed from favorites",
     "fetch_favorite_hotels_error": "Failed to fetch favorite hotels",
-    "fetch_hotels_error": "Failed to fetch hotels"
+    "fetch_hotels_error": "Failed to fetch hotels",
+    "change_language": "Change language",
+    "welcome_text": "Welcome to the app,\n\nwhere you can find the best hotels in the world. to start searching for a hotel, click on the Hotels in the menu."
 }
