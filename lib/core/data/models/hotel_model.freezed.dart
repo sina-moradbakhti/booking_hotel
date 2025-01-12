@@ -20,18 +20,28 @@ HotelModel _$HotelModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HotelModel {
+  @HiveField(0)
   @JsonKey(name: 'rating-info')
   RatingInfoModel get ratingInfo => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get name => throw _privateConstructorUsedError;
+  @HiveField(2)
   double get latitude => throw _privateConstructorUsedError;
+  @HiveField(3)
   double get longitude => throw _privateConstructorUsedError;
+  @HiveField(4)
   List<HotelImageModel> get images => throw _privateConstructorUsedError;
+  @HiveField(5)
   @JsonKey(name: 'hotel-id')
   String get hotelId => throw _privateConstructorUsedError;
+  @HiveField(6)
   String get destination => throw _privateConstructorUsedError;
+  @HiveField(7)
   int get category => throw _privateConstructorUsedError;
+  @HiveField(8)
   @JsonKey(name: 'category-type')
   String get categoryType => throw _privateConstructorUsedError;
+  @HiveField(9)
   @JsonKey(name: 'best-offer')
   BestOfferModel get bestOffer => throw _privateConstructorUsedError;
 
@@ -52,16 +62,16 @@ abstract class $HotelModelCopyWith<$Res> {
       _$HotelModelCopyWithImpl<$Res, HotelModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'rating-info') RatingInfoModel ratingInfo,
-      String name,
-      double latitude,
-      double longitude,
-      List<HotelImageModel> images,
-      @JsonKey(name: 'hotel-id') String hotelId,
-      String destination,
-      int category,
-      @JsonKey(name: 'category-type') String categoryType,
-      @JsonKey(name: 'best-offer') BestOfferModel bestOffer});
+      {@HiveField(0) @JsonKey(name: 'rating-info') RatingInfoModel ratingInfo,
+      @HiveField(1) String name,
+      @HiveField(2) double latitude,
+      @HiveField(3) double longitude,
+      @HiveField(4) List<HotelImageModel> images,
+      @HiveField(5) @JsonKey(name: 'hotel-id') String hotelId,
+      @HiveField(6) String destination,
+      @HiveField(7) int category,
+      @HiveField(8) @JsonKey(name: 'category-type') String categoryType,
+      @HiveField(9) @JsonKey(name: 'best-offer') BestOfferModel bestOffer});
 
   $RatingInfoModelCopyWith<$Res> get ratingInfo;
   $BestOfferModelCopyWith<$Res> get bestOffer;
@@ -167,16 +177,16 @@ abstract class _$$HotelModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'rating-info') RatingInfoModel ratingInfo,
-      String name,
-      double latitude,
-      double longitude,
-      List<HotelImageModel> images,
-      @JsonKey(name: 'hotel-id') String hotelId,
-      String destination,
-      int category,
-      @JsonKey(name: 'category-type') String categoryType,
-      @JsonKey(name: 'best-offer') BestOfferModel bestOffer});
+      {@HiveField(0) @JsonKey(name: 'rating-info') RatingInfoModel ratingInfo,
+      @HiveField(1) String name,
+      @HiveField(2) double latitude,
+      @HiveField(3) double longitude,
+      @HiveField(4) List<HotelImageModel> images,
+      @HiveField(5) @JsonKey(name: 'hotel-id') String hotelId,
+      @HiveField(6) String destination,
+      @HiveField(7) int category,
+      @HiveField(8) @JsonKey(name: 'category-type') String categoryType,
+      @HiveField(9) @JsonKey(name: 'best-offer') BestOfferModel bestOffer});
 
   @override
   $RatingInfoModelCopyWith<$Res> get ratingInfo;
@@ -257,32 +267,37 @@ class __$$HotelModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HotelModelImpl implements _HotelModel {
   const _$HotelModelImpl(
-      {@JsonKey(name: 'rating-info') required this.ratingInfo,
-      required this.name,
-      required this.latitude,
-      required this.longitude,
-      required final List<HotelImageModel> images,
-      @JsonKey(name: 'hotel-id') required this.hotelId,
-      required this.destination,
-      required this.category,
-      @JsonKey(name: 'category-type') required this.categoryType,
-      @JsonKey(name: 'best-offer') required this.bestOffer})
+      {@HiveField(0) @JsonKey(name: 'rating-info') required this.ratingInfo,
+      @HiveField(1) required this.name,
+      @HiveField(2) required this.latitude,
+      @HiveField(3) required this.longitude,
+      @HiveField(4) required final List<HotelImageModel> images,
+      @HiveField(5) @JsonKey(name: 'hotel-id') required this.hotelId,
+      @HiveField(6) required this.destination,
+      @HiveField(7) required this.category,
+      @HiveField(8) @JsonKey(name: 'category-type') required this.categoryType,
+      @HiveField(9) @JsonKey(name: 'best-offer') required this.bestOffer})
       : _images = images;
 
   factory _$HotelModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HotelModelImplFromJson(json);
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'rating-info')
   final RatingInfoModel ratingInfo;
   @override
+  @HiveField(1)
   final String name;
   @override
+  @HiveField(2)
   final double latitude;
   @override
+  @HiveField(3)
   final double longitude;
   final List<HotelImageModel> _images;
   @override
+  @HiveField(4)
   List<HotelImageModel> get images {
     if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
@@ -290,16 +305,21 @@ class _$HotelModelImpl implements _HotelModel {
   }
 
   @override
+  @HiveField(5)
   @JsonKey(name: 'hotel-id')
   final String hotelId;
   @override
+  @HiveField(6)
   final String destination;
   @override
+  @HiveField(7)
   final int category;
   @override
+  @HiveField(8)
   @JsonKey(name: 'category-type')
   final String categoryType;
   @override
+  @HiveField(9)
   @JsonKey(name: 'best-offer')
   final BestOfferModel bestOffer;
 
@@ -365,15 +385,20 @@ class _$HotelModelImpl implements _HotelModel {
 
 abstract class _HotelModel implements HotelModel {
   const factory _HotelModel(
-      {@JsonKey(name: 'rating-info') required final RatingInfoModel ratingInfo,
-      required final String name,
-      required final double latitude,
-      required final double longitude,
-      required final List<HotelImageModel> images,
-      @JsonKey(name: 'hotel-id') required final String hotelId,
-      required final String destination,
-      required final int category,
-      @JsonKey(name: 'category-type') required final String categoryType,
+      {@HiveField(0)
+      @JsonKey(name: 'rating-info')
+      required final RatingInfoModel ratingInfo,
+      @HiveField(1) required final String name,
+      @HiveField(2) required final double latitude,
+      @HiveField(3) required final double longitude,
+      @HiveField(4) required final List<HotelImageModel> images,
+      @HiveField(5) @JsonKey(name: 'hotel-id') required final String hotelId,
+      @HiveField(6) required final String destination,
+      @HiveField(7) required final int category,
+      @HiveField(8)
+      @JsonKey(name: 'category-type')
+      required final String categoryType,
+      @HiveField(9)
       @JsonKey(name: 'best-offer')
       required final BestOfferModel bestOffer}) = _$HotelModelImpl;
 
@@ -381,27 +406,37 @@ abstract class _HotelModel implements HotelModel {
       _$HotelModelImpl.fromJson;
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'rating-info')
   RatingInfoModel get ratingInfo;
   @override
+  @HiveField(1)
   String get name;
   @override
+  @HiveField(2)
   double get latitude;
   @override
+  @HiveField(3)
   double get longitude;
   @override
+  @HiveField(4)
   List<HotelImageModel> get images;
   @override
+  @HiveField(5)
   @JsonKey(name: 'hotel-id')
   String get hotelId;
   @override
+  @HiveField(6)
   String get destination;
   @override
+  @HiveField(7)
   int get category;
   @override
+  @HiveField(8)
   @JsonKey(name: 'category-type')
   String get categoryType;
   @override
+  @HiveField(9)
   @JsonKey(name: 'best-offer')
   BestOfferModel get bestOffer;
 

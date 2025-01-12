@@ -20,7 +20,9 @@ HotelImageModel _$HotelImageModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HotelImageModel {
+  @HiveField(0)
   String get large => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get small => throw _privateConstructorUsedError;
 
   /// Serializes this HotelImageModel to a JSON map.
@@ -39,7 +41,7 @@ abstract class $HotelImageModelCopyWith<$Res> {
           HotelImageModel value, $Res Function(HotelImageModel) then) =
       _$HotelImageModelCopyWithImpl<$Res, HotelImageModel>;
   @useResult
-  $Res call({String large, String small});
+  $Res call({@HiveField(0) String large, @HiveField(1) String small});
 }
 
 /// @nodoc
@@ -81,7 +83,7 @@ abstract class _$$HotelImageModelImplCopyWith<$Res>
       __$$HotelImageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String large, String small});
+  $Res call({@HiveField(0) String large, @HiveField(1) String small});
 }
 
 /// @nodoc
@@ -116,14 +118,17 @@ class __$$HotelImageModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$HotelImageModelImpl implements _HotelImageModel {
-  const _$HotelImageModelImpl({required this.large, required this.small});
+  const _$HotelImageModelImpl(
+      {@HiveField(0) required this.large, @HiveField(1) required this.small});
 
   factory _$HotelImageModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HotelImageModelImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String large;
   @override
+  @HiveField(1)
   final String small;
 
   @override
@@ -163,15 +168,17 @@ class _$HotelImageModelImpl implements _HotelImageModel {
 
 abstract class _HotelImageModel implements HotelImageModel {
   const factory _HotelImageModel(
-      {required final String large,
-      required final String small}) = _$HotelImageModelImpl;
+      {@HiveField(0) required final String large,
+      @HiveField(1) required final String small}) = _$HotelImageModelImpl;
 
   factory _HotelImageModel.fromJson(Map<String, dynamic> json) =
       _$HotelImageModelImpl.fromJson;
 
   @override
+  @HiveField(0)
   String get large;
   @override
+  @HiveField(1)
   String get small;
 
   /// Create a copy of HotelImageModel

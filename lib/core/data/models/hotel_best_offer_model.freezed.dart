@@ -20,27 +20,42 @@ BestOfferModel _$BestOfferModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BestOfferModel {
+  @HiveField(0)
   @JsonKey(name: 'applied-travel-discount')
+  @HiveField(1)
   dynamic get appliedTravelDiscount => throw _privateConstructorUsedError;
+  @HiveField(2)
   @JsonKey(name: 'detailed-price-per-person')
+  @HiveField(3)
   List<dynamic> get detailedPricePerPerson =>
       throw _privateConstructorUsedError;
+  @HiveField(4)
   @JsonKey(name: 'included-travel-discount')
+  @HiveField(5)
   int get includedTravelDiscount => throw _privateConstructorUsedError;
+  @HiveField(6)
   @JsonKey(name: 'original-travel-price')
   int get originalTravelPrice => throw _privateConstructorUsedError;
+  @HiveField(7)
   @JsonKey(name: 'simple-price-per-person')
   int get simplePricePerPerson => throw _privateConstructorUsedError;
+  @HiveField(8)
   @JsonKey(name: 'total')
   int get total => throw _privateConstructorUsedError;
+  @HiveField(9)
   @JsonKey(name: 'travel-price')
   int get travelPrice => throw _privateConstructorUsedError;
+  @HiveField(10)
   @JsonKey(name: 'available-special-groups')
+  @HiveField(11)
   List<String> get availableSpecialGroups => throw _privateConstructorUsedError;
+  @HiveField(12)
   @JsonKey(name: 'flight-included')
   bool get flightIncluded => throw _privateConstructorUsedError;
+  @HiveField(13)
   @JsonKey(name: 'rooms')
   Room get rooms => throw _privateConstructorUsedError;
+  @HiveField(14)
   @JsonKey(name: 'travel-date')
   TravelDate get travelDate => throw _privateConstructorUsedError;
 
@@ -61,19 +76,33 @@ abstract class $BestOfferModelCopyWith<$Res> {
       _$BestOfferModelCopyWithImpl<$Res, BestOfferModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'applied-travel-discount') dynamic appliedTravelDiscount,
+      {@HiveField(0)
+      @JsonKey(name: 'applied-travel-discount')
+      @HiveField(1)
+      dynamic appliedTravelDiscount,
+      @HiveField(2)
       @JsonKey(name: 'detailed-price-per-person')
+      @HiveField(3)
       List<dynamic> detailedPricePerPerson,
-      @JsonKey(name: 'included-travel-discount') int includedTravelDiscount,
-      @JsonKey(name: 'original-travel-price') int originalTravelPrice,
-      @JsonKey(name: 'simple-price-per-person') int simplePricePerPerson,
-      @JsonKey(name: 'total') int total,
-      @JsonKey(name: 'travel-price') int travelPrice,
+      @HiveField(4)
+      @JsonKey(name: 'included-travel-discount')
+      @HiveField(5)
+      int includedTravelDiscount,
+      @HiveField(6)
+      @JsonKey(name: 'original-travel-price')
+      int originalTravelPrice,
+      @HiveField(7)
+      @JsonKey(name: 'simple-price-per-person')
+      int simplePricePerPerson,
+      @HiveField(8) @JsonKey(name: 'total') int total,
+      @HiveField(9) @JsonKey(name: 'travel-price') int travelPrice,
+      @HiveField(10)
       @JsonKey(name: 'available-special-groups')
+      @HiveField(11)
       List<String> availableSpecialGroups,
-      @JsonKey(name: 'flight-included') bool flightIncluded,
-      @JsonKey(name: 'rooms') Room rooms,
-      @JsonKey(name: 'travel-date') TravelDate travelDate});
+      @HiveField(12) @JsonKey(name: 'flight-included') bool flightIncluded,
+      @HiveField(13) @JsonKey(name: 'rooms') Room rooms,
+      @HiveField(14) @JsonKey(name: 'travel-date') TravelDate travelDate});
 
   $RoomCopyWith<$Res> get rooms;
   $TravelDateCopyWith<$Res> get travelDate;
@@ -184,19 +213,33 @@ abstract class _$$BestOfferModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'applied-travel-discount') dynamic appliedTravelDiscount,
+      {@HiveField(0)
+      @JsonKey(name: 'applied-travel-discount')
+      @HiveField(1)
+      dynamic appliedTravelDiscount,
+      @HiveField(2)
       @JsonKey(name: 'detailed-price-per-person')
+      @HiveField(3)
       List<dynamic> detailedPricePerPerson,
-      @JsonKey(name: 'included-travel-discount') int includedTravelDiscount,
-      @JsonKey(name: 'original-travel-price') int originalTravelPrice,
-      @JsonKey(name: 'simple-price-per-person') int simplePricePerPerson,
-      @JsonKey(name: 'total') int total,
-      @JsonKey(name: 'travel-price') int travelPrice,
+      @HiveField(4)
+      @JsonKey(name: 'included-travel-discount')
+      @HiveField(5)
+      int includedTravelDiscount,
+      @HiveField(6)
+      @JsonKey(name: 'original-travel-price')
+      int originalTravelPrice,
+      @HiveField(7)
+      @JsonKey(name: 'simple-price-per-person')
+      int simplePricePerPerson,
+      @HiveField(8) @JsonKey(name: 'total') int total,
+      @HiveField(9) @JsonKey(name: 'travel-price') int travelPrice,
+      @HiveField(10)
       @JsonKey(name: 'available-special-groups')
+      @HiveField(11)
       List<String> availableSpecialGroups,
-      @JsonKey(name: 'flight-included') bool flightIncluded,
-      @JsonKey(name: 'rooms') Room rooms,
-      @JsonKey(name: 'travel-date') TravelDate travelDate});
+      @HiveField(12) @JsonKey(name: 'flight-included') bool flightIncluded,
+      @HiveField(13) @JsonKey(name: 'rooms') Room rooms,
+      @HiveField(14) @JsonKey(name: 'travel-date') TravelDate travelDate});
 
   @override
   $RoomCopyWith<$Res> get rooms;
@@ -282,22 +325,35 @@ class __$$BestOfferModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BestOfferModelImpl implements _BestOfferModel {
   const _$BestOfferModelImpl(
-      {@JsonKey(name: 'applied-travel-discount')
+      {@HiveField(0)
+      @JsonKey(name: 'applied-travel-discount')
+      @HiveField(1)
       required this.appliedTravelDiscount,
+      @HiveField(2)
       @JsonKey(name: 'detailed-price-per-person')
+      @HiveField(3)
       required final List<dynamic> detailedPricePerPerson,
+      @HiveField(4)
       @JsonKey(name: 'included-travel-discount')
+      @HiveField(5)
       required this.includedTravelDiscount,
-      @JsonKey(name: 'original-travel-price') required this.originalTravelPrice,
+      @HiveField(6)
+      @JsonKey(name: 'original-travel-price')
+      required this.originalTravelPrice,
+      @HiveField(7)
       @JsonKey(name: 'simple-price-per-person')
       required this.simplePricePerPerson,
-      @JsonKey(name: 'total') required this.total,
-      @JsonKey(name: 'travel-price') required this.travelPrice,
+      @HiveField(8) @JsonKey(name: 'total') required this.total,
+      @HiveField(9) @JsonKey(name: 'travel-price') required this.travelPrice,
+      @HiveField(10)
       @JsonKey(name: 'available-special-groups')
+      @HiveField(11)
       required final List<String> availableSpecialGroups,
-      @JsonKey(name: 'flight-included') required this.flightIncluded,
-      @JsonKey(name: 'rooms') required this.rooms,
-      @JsonKey(name: 'travel-date') required this.travelDate})
+      @HiveField(12)
+      @JsonKey(name: 'flight-included')
+      required this.flightIncluded,
+      @HiveField(13) @JsonKey(name: 'rooms') required this.rooms,
+      @HiveField(14) @JsonKey(name: 'travel-date') required this.travelDate})
       : _detailedPricePerPerson = detailedPricePerPerson,
         _availableSpecialGroups = availableSpecialGroups;
 
@@ -305,11 +361,15 @@ class _$BestOfferModelImpl implements _BestOfferModel {
       _$$BestOfferModelImplFromJson(json);
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'applied-travel-discount')
+  @HiveField(1)
   final dynamic appliedTravelDiscount;
   final List<dynamic> _detailedPricePerPerson;
   @override
+  @HiveField(2)
   @JsonKey(name: 'detailed-price-per-person')
+  @HiveField(3)
   List<dynamic> get detailedPricePerPerson {
     if (_detailedPricePerPerson is EqualUnmodifiableListView)
       return _detailedPricePerPerson;
@@ -318,23 +378,31 @@ class _$BestOfferModelImpl implements _BestOfferModel {
   }
 
   @override
+  @HiveField(4)
   @JsonKey(name: 'included-travel-discount')
+  @HiveField(5)
   final int includedTravelDiscount;
   @override
+  @HiveField(6)
   @JsonKey(name: 'original-travel-price')
   final int originalTravelPrice;
   @override
+  @HiveField(7)
   @JsonKey(name: 'simple-price-per-person')
   final int simplePricePerPerson;
   @override
+  @HiveField(8)
   @JsonKey(name: 'total')
   final int total;
   @override
+  @HiveField(9)
   @JsonKey(name: 'travel-price')
   final int travelPrice;
   final List<String> _availableSpecialGroups;
   @override
+  @HiveField(10)
   @JsonKey(name: 'available-special-groups')
+  @HiveField(11)
   List<String> get availableSpecialGroups {
     if (_availableSpecialGroups is EqualUnmodifiableListView)
       return _availableSpecialGroups;
@@ -343,12 +411,15 @@ class _$BestOfferModelImpl implements _BestOfferModel {
   }
 
   @override
+  @HiveField(12)
   @JsonKey(name: 'flight-included')
   final bool flightIncluded;
   @override
+  @HiveField(13)
   @JsonKey(name: 'rooms')
   final Room rooms;
   @override
+  @HiveField(14)
   @JsonKey(name: 'travel-date')
   final TravelDate travelDate;
 
@@ -419,59 +490,89 @@ class _$BestOfferModelImpl implements _BestOfferModel {
 
 abstract class _BestOfferModel implements BestOfferModel {
   const factory _BestOfferModel(
-          {@JsonKey(name: 'applied-travel-discount')
-          required final dynamic appliedTravelDiscount,
-          @JsonKey(name: 'detailed-price-per-person')
-          required final List<dynamic> detailedPricePerPerson,
-          @JsonKey(name: 'included-travel-discount')
-          required final int includedTravelDiscount,
-          @JsonKey(name: 'original-travel-price')
-          required final int originalTravelPrice,
-          @JsonKey(name: 'simple-price-per-person')
-          required final int simplePricePerPerson,
-          @JsonKey(name: 'total') required final int total,
-          @JsonKey(name: 'travel-price') required final int travelPrice,
-          @JsonKey(name: 'available-special-groups')
-          required final List<String> availableSpecialGroups,
-          @JsonKey(name: 'flight-included') required final bool flightIncluded,
-          @JsonKey(name: 'rooms') required final Room rooms,
-          @JsonKey(name: 'travel-date') required final TravelDate travelDate}) =
-      _$BestOfferModelImpl;
+      {@HiveField(0)
+      @JsonKey(name: 'applied-travel-discount')
+      @HiveField(1)
+      required final dynamic appliedTravelDiscount,
+      @HiveField(2)
+      @JsonKey(name: 'detailed-price-per-person')
+      @HiveField(3)
+      required final List<dynamic> detailedPricePerPerson,
+      @HiveField(4)
+      @JsonKey(name: 'included-travel-discount')
+      @HiveField(5)
+      required final int includedTravelDiscount,
+      @HiveField(6)
+      @JsonKey(name: 'original-travel-price')
+      required final int originalTravelPrice,
+      @HiveField(7)
+      @JsonKey(name: 'simple-price-per-person')
+      required final int simplePricePerPerson,
+      @HiveField(8) @JsonKey(name: 'total') required final int total,
+      @HiveField(9)
+      @JsonKey(name: 'travel-price')
+      required final int travelPrice,
+      @HiveField(10)
+      @JsonKey(name: 'available-special-groups')
+      @HiveField(11)
+      required final List<String> availableSpecialGroups,
+      @HiveField(12)
+      @JsonKey(name: 'flight-included')
+      required final bool flightIncluded,
+      @HiveField(13) @JsonKey(name: 'rooms') required final Room rooms,
+      @HiveField(14)
+      @JsonKey(name: 'travel-date')
+      required final TravelDate travelDate}) = _$BestOfferModelImpl;
 
   factory _BestOfferModel.fromJson(Map<String, dynamic> json) =
       _$BestOfferModelImpl.fromJson;
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'applied-travel-discount')
+  @HiveField(1)
   dynamic get appliedTravelDiscount;
   @override
+  @HiveField(2)
   @JsonKey(name: 'detailed-price-per-person')
+  @HiveField(3)
   List<dynamic> get detailedPricePerPerson;
   @override
+  @HiveField(4)
   @JsonKey(name: 'included-travel-discount')
+  @HiveField(5)
   int get includedTravelDiscount;
   @override
+  @HiveField(6)
   @JsonKey(name: 'original-travel-price')
   int get originalTravelPrice;
   @override
+  @HiveField(7)
   @JsonKey(name: 'simple-price-per-person')
   int get simplePricePerPerson;
   @override
+  @HiveField(8)
   @JsonKey(name: 'total')
   int get total;
   @override
+  @HiveField(9)
   @JsonKey(name: 'travel-price')
   int get travelPrice;
   @override
+  @HiveField(10)
   @JsonKey(name: 'available-special-groups')
+  @HiveField(11)
   List<String> get availableSpecialGroups;
   @override
+  @HiveField(12)
   @JsonKey(name: 'flight-included')
   bool get flightIncluded;
   @override
+  @HiveField(13)
   @JsonKey(name: 'rooms')
   Room get rooms;
   @override
+  @HiveField(14)
   @JsonKey(name: 'travel-date')
   TravelDate get travelDate;
 
@@ -489,11 +590,15 @@ Room _$RoomFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Room {
+  @HiveField(0)
   @JsonKey(name: 'overall')
   Map<String, dynamic> get overall => throw _privateConstructorUsedError;
+  @HiveField(1)
   @JsonKey(name: 'prices-and-occupancy')
+  @HiveField(2)
   List<Map<String, dynamic>> get pricesAndOccupancy =>
       throw _privateConstructorUsedError;
+  @HiveField(3)
   @JsonKey(name: 'room-groups')
   List<Map<String, dynamic>> get roomGroups =>
       throw _privateConstructorUsedError;
@@ -513,10 +618,14 @@ abstract class $RoomCopyWith<$Res> {
       _$RoomCopyWithImpl<$Res, Room>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'overall') Map<String, dynamic> overall,
+      {@HiveField(0) @JsonKey(name: 'overall') Map<String, dynamic> overall,
+      @HiveField(1)
       @JsonKey(name: 'prices-and-occupancy')
+      @HiveField(2)
       List<Map<String, dynamic>> pricesAndOccupancy,
-      @JsonKey(name: 'room-groups') List<Map<String, dynamic>> roomGroups});
+      @HiveField(3)
+      @JsonKey(name: 'room-groups')
+      List<Map<String, dynamic>> roomGroups});
 }
 
 /// @nodoc
@@ -563,10 +672,14 @@ abstract class _$$RoomImplCopyWith<$Res> implements $RoomCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'overall') Map<String, dynamic> overall,
+      {@HiveField(0) @JsonKey(name: 'overall') Map<String, dynamic> overall,
+      @HiveField(1)
       @JsonKey(name: 'prices-and-occupancy')
+      @HiveField(2)
       List<Map<String, dynamic>> pricesAndOccupancy,
-      @JsonKey(name: 'room-groups') List<Map<String, dynamic>> roomGroups});
+      @HiveField(3)
+      @JsonKey(name: 'room-groups')
+      List<Map<String, dynamic>> roomGroups});
 }
 
 /// @nodoc
@@ -606,9 +719,14 @@ class __$$RoomImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RoomImpl implements _Room {
   const _$RoomImpl(
-      {@JsonKey(name: 'overall') required final Map<String, dynamic> overall,
+      {@HiveField(0)
+      @JsonKey(name: 'overall')
+      required final Map<String, dynamic> overall,
+      @HiveField(1)
       @JsonKey(name: 'prices-and-occupancy')
+      @HiveField(2)
       required final List<Map<String, dynamic>> pricesAndOccupancy,
+      @HiveField(3)
       @JsonKey(name: 'room-groups')
       required final List<Map<String, dynamic>> roomGroups})
       : _overall = overall,
@@ -620,6 +738,7 @@ class _$RoomImpl implements _Room {
 
   final Map<String, dynamic> _overall;
   @override
+  @HiveField(0)
   @JsonKey(name: 'overall')
   Map<String, dynamic> get overall {
     if (_overall is EqualUnmodifiableMapView) return _overall;
@@ -629,7 +748,9 @@ class _$RoomImpl implements _Room {
 
   final List<Map<String, dynamic>> _pricesAndOccupancy;
   @override
+  @HiveField(1)
   @JsonKey(name: 'prices-and-occupancy')
+  @HiveField(2)
   List<Map<String, dynamic>> get pricesAndOccupancy {
     if (_pricesAndOccupancy is EqualUnmodifiableListView)
       return _pricesAndOccupancy;
@@ -639,6 +760,7 @@ class _$RoomImpl implements _Room {
 
   final List<Map<String, dynamic>> _roomGroups;
   @override
+  @HiveField(3)
   @JsonKey(name: 'room-groups')
   List<Map<String, dynamic>> get roomGroups {
     if (_roomGroups is EqualUnmodifiableListView) return _roomGroups;
@@ -689,21 +811,30 @@ class _$RoomImpl implements _Room {
 
 abstract class _Room implements Room {
   const factory _Room(
-      {@JsonKey(name: 'overall') required final Map<String, dynamic> overall,
+      {@HiveField(0)
+      @JsonKey(name: 'overall')
+      required final Map<String, dynamic> overall,
+      @HiveField(1)
       @JsonKey(name: 'prices-and-occupancy')
+      @HiveField(2)
       required final List<Map<String, dynamic>> pricesAndOccupancy,
+      @HiveField(3)
       @JsonKey(name: 'room-groups')
       required final List<Map<String, dynamic>> roomGroups}) = _$RoomImpl;
 
   factory _Room.fromJson(Map<String, dynamic> json) = _$RoomImpl.fromJson;
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'overall')
   Map<String, dynamic> get overall;
   @override
+  @HiveField(1)
   @JsonKey(name: 'prices-and-occupancy')
+  @HiveField(2)
   List<Map<String, dynamic>> get pricesAndOccupancy;
   @override
+  @HiveField(3)
   @JsonKey(name: 'room-groups')
   List<Map<String, dynamic>> get roomGroups;
 
@@ -721,12 +852,16 @@ TravelDate _$TravelDateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TravelDate {
+  @HiveField(0)
   @JsonKey(name: 'days')
   int get days => throw _privateConstructorUsedError;
+  @HiveField(1)
   @JsonKey(name: 'departure-date')
   String get departureDate => throw _privateConstructorUsedError;
+  @HiveField(2)
   @JsonKey(name: 'nights')
   int get nights => throw _privateConstructorUsedError;
+  @HiveField(3)
   @JsonKey(name: 'return-date')
   String get returnDate => throw _privateConstructorUsedError;
 
@@ -747,10 +882,10 @@ abstract class $TravelDateCopyWith<$Res> {
       _$TravelDateCopyWithImpl<$Res, TravelDate>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'days') int days,
-      @JsonKey(name: 'departure-date') String departureDate,
-      @JsonKey(name: 'nights') int nights,
-      @JsonKey(name: 'return-date') String returnDate});
+      {@HiveField(0) @JsonKey(name: 'days') int days,
+      @HiveField(1) @JsonKey(name: 'departure-date') String departureDate,
+      @HiveField(2) @JsonKey(name: 'nights') int nights,
+      @HiveField(3) @JsonKey(name: 'return-date') String returnDate});
 }
 
 /// @nodoc
@@ -803,10 +938,10 @@ abstract class _$$TravelDateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'days') int days,
-      @JsonKey(name: 'departure-date') String departureDate,
-      @JsonKey(name: 'nights') int nights,
-      @JsonKey(name: 'return-date') String returnDate});
+      {@HiveField(0) @JsonKey(name: 'days') int days,
+      @HiveField(1) @JsonKey(name: 'departure-date') String departureDate,
+      @HiveField(2) @JsonKey(name: 'nights') int nights,
+      @HiveField(3) @JsonKey(name: 'return-date') String returnDate});
 }
 
 /// @nodoc
@@ -852,24 +987,30 @@ class __$$TravelDateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TravelDateImpl implements _TravelDate {
   const _$TravelDateImpl(
-      {@JsonKey(name: 'days') required this.days,
-      @JsonKey(name: 'departure-date') required this.departureDate,
-      @JsonKey(name: 'nights') required this.nights,
-      @JsonKey(name: 'return-date') required this.returnDate});
+      {@HiveField(0) @JsonKey(name: 'days') required this.days,
+      @HiveField(1)
+      @JsonKey(name: 'departure-date')
+      required this.departureDate,
+      @HiveField(2) @JsonKey(name: 'nights') required this.nights,
+      @HiveField(3) @JsonKey(name: 'return-date') required this.returnDate});
 
   factory _$TravelDateImpl.fromJson(Map<String, dynamic> json) =>
       _$$TravelDateImplFromJson(json);
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'days')
   final int days;
   @override
+  @HiveField(1)
   @JsonKey(name: 'departure-date')
   final String departureDate;
   @override
+  @HiveField(2)
   @JsonKey(name: 'nights')
   final int nights;
   @override
+  @HiveField(3)
   @JsonKey(name: 'return-date')
   final String returnDate;
 
@@ -914,25 +1055,32 @@ class _$TravelDateImpl implements _TravelDate {
 
 abstract class _TravelDate implements TravelDate {
   const factory _TravelDate(
-          {@JsonKey(name: 'days') required final int days,
-          @JsonKey(name: 'departure-date') required final String departureDate,
-          @JsonKey(name: 'nights') required final int nights,
-          @JsonKey(name: 'return-date') required final String returnDate}) =
-      _$TravelDateImpl;
+      {@HiveField(0) @JsonKey(name: 'days') required final int days,
+      @HiveField(1)
+      @JsonKey(name: 'departure-date')
+      required final String departureDate,
+      @HiveField(2) @JsonKey(name: 'nights') required final int nights,
+      @HiveField(3)
+      @JsonKey(name: 'return-date')
+      required final String returnDate}) = _$TravelDateImpl;
 
   factory _TravelDate.fromJson(Map<String, dynamic> json) =
       _$TravelDateImpl.fromJson;
 
   @override
+  @HiveField(0)
   @JsonKey(name: 'days')
   int get days;
   @override
+  @HiveField(1)
   @JsonKey(name: 'departure-date')
   String get departureDate;
   @override
+  @HiveField(2)
   @JsonKey(name: 'nights')
   int get nights;
   @override
+  @HiveField(3)
   @JsonKey(name: 'return-date')
   String get returnDate;
 

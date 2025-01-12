@@ -20,11 +20,15 @@ RatingInfoModel _$RatingInfoModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RatingInfoModel {
+  @HiveField(1)
   @JsonKey(name: 'recommendation-rate')
   int get recommendationRate => throw _privateConstructorUsedError;
+  @HiveField(2)
   @JsonKey(name: 'reviews-count')
   int get reviewsCount => throw _privateConstructorUsedError;
+  @HiveField(3)
   double get score => throw _privateConstructorUsedError;
+  @HiveField(4)
   @JsonKey(name: 'score-description')
   String get scoreDescription => throw _privateConstructorUsedError;
 
@@ -45,10 +49,14 @@ abstract class $RatingInfoModelCopyWith<$Res> {
       _$RatingInfoModelCopyWithImpl<$Res, RatingInfoModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'recommendation-rate') int recommendationRate,
-      @JsonKey(name: 'reviews-count') int reviewsCount,
-      double score,
-      @JsonKey(name: 'score-description') String scoreDescription});
+      {@HiveField(1)
+      @JsonKey(name: 'recommendation-rate')
+      int recommendationRate,
+      @HiveField(2) @JsonKey(name: 'reviews-count') int reviewsCount,
+      @HiveField(3) double score,
+      @HiveField(4)
+      @JsonKey(name: 'score-description')
+      String scoreDescription});
 }
 
 /// @nodoc
@@ -101,10 +109,14 @@ abstract class _$$RatingInfoModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'recommendation-rate') int recommendationRate,
-      @JsonKey(name: 'reviews-count') int reviewsCount,
-      double score,
-      @JsonKey(name: 'score-description') String scoreDescription});
+      {@HiveField(1)
+      @JsonKey(name: 'recommendation-rate')
+      int recommendationRate,
+      @HiveField(2) @JsonKey(name: 'reviews-count') int reviewsCount,
+      @HiveField(3) double score,
+      @HiveField(4)
+      @JsonKey(name: 'score-description')
+      String scoreDescription});
 }
 
 /// @nodoc
@@ -150,23 +162,31 @@ class __$$RatingInfoModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RatingInfoModelImpl implements _RatingInfoModel {
   const _$RatingInfoModelImpl(
-      {@JsonKey(name: 'recommendation-rate') required this.recommendationRate,
-      @JsonKey(name: 'reviews-count') required this.reviewsCount,
-      required this.score,
-      @JsonKey(name: 'score-description') required this.scoreDescription});
+      {@HiveField(1)
+      @JsonKey(name: 'recommendation-rate')
+      required this.recommendationRate,
+      @HiveField(2) @JsonKey(name: 'reviews-count') required this.reviewsCount,
+      @HiveField(3) required this.score,
+      @HiveField(4)
+      @JsonKey(name: 'score-description')
+      required this.scoreDescription});
 
   factory _$RatingInfoModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RatingInfoModelImplFromJson(json);
 
   @override
+  @HiveField(1)
   @JsonKey(name: 'recommendation-rate')
   final int recommendationRate;
   @override
+  @HiveField(2)
   @JsonKey(name: 'reviews-count')
   final int reviewsCount;
   @override
+  @HiveField(3)
   final double score;
   @override
+  @HiveField(4)
   @JsonKey(name: 'score-description')
   final String scoreDescription;
 
@@ -213,10 +233,14 @@ class _$RatingInfoModelImpl implements _RatingInfoModel {
 
 abstract class _RatingInfoModel implements RatingInfoModel {
   const factory _RatingInfoModel(
-      {@JsonKey(name: 'recommendation-rate')
+      {@HiveField(1)
+      @JsonKey(name: 'recommendation-rate')
       required final int recommendationRate,
-      @JsonKey(name: 'reviews-count') required final int reviewsCount,
-      required final double score,
+      @HiveField(2)
+      @JsonKey(name: 'reviews-count')
+      required final int reviewsCount,
+      @HiveField(3) required final double score,
+      @HiveField(4)
       @JsonKey(name: 'score-description')
       required final String scoreDescription}) = _$RatingInfoModelImpl;
 
@@ -224,14 +248,18 @@ abstract class _RatingInfoModel implements RatingInfoModel {
       _$RatingInfoModelImpl.fromJson;
 
   @override
+  @HiveField(1)
   @JsonKey(name: 'recommendation-rate')
   int get recommendationRate;
   @override
+  @HiveField(2)
   @JsonKey(name: 'reviews-count')
   int get reviewsCount;
   @override
+  @HiveField(3)
   double get score;
   @override
+  @HiveField(4)
   @JsonKey(name: 'score-description')
   String get scoreDescription;
 

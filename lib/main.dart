@@ -1,4 +1,4 @@
-import 'package:booking_hotel/core/utils/constants.dart';
+import 'package:booking_hotel/app.dart';
 import 'package:booking_hotel/core/utils/extensions.dart';
 import 'package:booking_hotel/core/utils/routes.dart';
 import 'package:booking_hotel/core/utils/theme.dart';
@@ -19,19 +19,12 @@ import 'features/hotels/presentation/bloc/hotel.bloc.dart';
 part 'router.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  App.setupFlutterBase();
+  await App.setupLocalization();
+  await App.setupLocalCache();
+  await App.setupLocator();
 
-  setupServiceLocator();
-
-  runApp(
-    EasyLocalization(
-      supportedLocales: Constants.supportedLocales,
-      path: Constants.translationsPath,
-      fallbackLocale: Constants.supportedLocales[0],
-      child: const MyApp(),
-    ),
-  );
+  runApp(App.buildApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
