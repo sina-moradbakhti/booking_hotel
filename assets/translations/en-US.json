@@ -1,0 +1,16 @@
+{
+    "overview": "Overview",
+    "hotels": "Hotels",
+    "favorites": "Favorites",
+    "account": "Account",
+    "to_the_offers": "To the offers",
+    "days": "Days",
+    "nights": "Nights",
+    "adults_abvr": "Ad",
+    "children_abvr": "Ch",
+    "including_abvr": "Inc",
+    "flight_abvr": "Flt",
+    "per_person_abvr": "p.P.",
+    "from": "From",
+    "hotels_page_title": "{} Hotels in {}"
+}
