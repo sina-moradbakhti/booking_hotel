@@ -44,6 +44,8 @@ mixin _$HotelModel {
   @HiveField(9)
   @JsonKey(name: 'best-offer')
   BestOfferModel get bestOffer => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false, defaultValue: false)
+  bool get isFavorite => throw _privateConstructorUsedError;
 
   /// Serializes this HotelModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -71,7 +73,10 @@ abstract class $HotelModelCopyWith<$Res> {
       @HiveField(6) String destination,
       @HiveField(7) int category,
       @HiveField(8) @JsonKey(name: 'category-type') String categoryType,
-      @HiveField(9) @JsonKey(name: 'best-offer') BestOfferModel bestOffer});
+      @HiveField(9) @JsonKey(name: 'best-offer') BestOfferModel bestOffer,
+      @JsonKey(
+          includeFromJson: false, includeToJson: false, defaultValue: false)
+      bool isFavorite});
 
   $RatingInfoModelCopyWith<$Res> get ratingInfo;
   $BestOfferModelCopyWith<$Res> get bestOffer;
@@ -102,6 +107,7 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
     Object? category = null,
     Object? categoryType = null,
     Object? bestOffer = null,
+    Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
       ratingInfo: null == ratingInfo
@@ -144,6 +150,10 @@ class _$HotelModelCopyWithImpl<$Res, $Val extends HotelModel>
           ? _value.bestOffer
           : bestOffer // ignore: cast_nullable_to_non_nullable
               as BestOfferModel,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -186,7 +196,10 @@ abstract class _$$HotelModelImplCopyWith<$Res>
       @HiveField(6) String destination,
       @HiveField(7) int category,
       @HiveField(8) @JsonKey(name: 'category-type') String categoryType,
-      @HiveField(9) @JsonKey(name: 'best-offer') BestOfferModel bestOffer});
+      @HiveField(9) @JsonKey(name: 'best-offer') BestOfferModel bestOffer,
+      @JsonKey(
+          includeFromJson: false, includeToJson: false, defaultValue: false)
+      bool isFavorite});
 
   @override
   $RatingInfoModelCopyWith<$Res> get ratingInfo;
@@ -217,6 +230,7 @@ class __$$HotelModelImplCopyWithImpl<$Res>
     Object? category = null,
     Object? categoryType = null,
     Object? bestOffer = null,
+    Object? isFavorite = null,
   }) {
     return _then(_$HotelModelImpl(
       ratingInfo: null == ratingInfo
@@ -259,6 +273,10 @@ class __$$HotelModelImplCopyWithImpl<$Res>
           ? _value.bestOffer
           : bestOffer // ignore: cast_nullable_to_non_nullable
               as BestOfferModel,
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -276,7 +294,10 @@ class _$HotelModelImpl implements _HotelModel {
       @HiveField(6) required this.destination,
       @HiveField(7) required this.category,
       @HiveField(8) @JsonKey(name: 'category-type') required this.categoryType,
-      @HiveField(9) @JsonKey(name: 'best-offer') required this.bestOffer})
+      @HiveField(9) @JsonKey(name: 'best-offer') required this.bestOffer,
+      @JsonKey(
+          includeFromJson: false, includeToJson: false, defaultValue: false)
+      this.isFavorite = false})
       : _images = images;
 
   factory _$HotelModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -322,10 +343,13 @@ class _$HotelModelImpl implements _HotelModel {
   @HiveField(9)
   @JsonKey(name: 'best-offer')
   final BestOfferModel bestOffer;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false, defaultValue: false)
+  final bool isFavorite;
 
   @override
   String toString() {
-    return 'HotelModel(ratingInfo: $ratingInfo, name: $name, latitude: $latitude, longitude: $longitude, images: $images, hotelId: $hotelId, destination: $destination, category: $category, categoryType: $categoryType, bestOffer: $bestOffer)';
+    return 'HotelModel(ratingInfo: $ratingInfo, name: $name, latitude: $latitude, longitude: $longitude, images: $images, hotelId: $hotelId, destination: $destination, category: $category, categoryType: $categoryType, bestOffer: $bestOffer, isFavorite: $isFavorite)';
   }
 
   @override
@@ -349,7 +373,9 @@ class _$HotelModelImpl implements _HotelModel {
             (identical(other.categoryType, categoryType) ||
                 other.categoryType == categoryType) &&
             (identical(other.bestOffer, bestOffer) ||
-                other.bestOffer == bestOffer));
+                other.bestOffer == bestOffer) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -365,7 +391,8 @@ class _$HotelModelImpl implements _HotelModel {
       destination,
       category,
       categoryType,
-      bestOffer);
+      bestOffer,
+      isFavorite);
 
   /// Create a copy of HotelModel
   /// with the given fields replaced by the non-null parameter values.
@@ -400,7 +427,10 @@ abstract class _HotelModel implements HotelModel {
       required final String categoryType,
       @HiveField(9)
       @JsonKey(name: 'best-offer')
-      required final BestOfferModel bestOffer}) = _$HotelModelImpl;
+      required final BestOfferModel bestOffer,
+      @JsonKey(
+          includeFromJson: false, includeToJson: false, defaultValue: false)
+      final bool isFavorite}) = _$HotelModelImpl;
 
   factory _HotelModel.fromJson(Map<String, dynamic> json) =
       _$HotelModelImpl.fromJson;
@@ -439,6 +469,9 @@ abstract class _HotelModel implements HotelModel {
   @HiveField(9)
   @JsonKey(name: 'best-offer')
   BestOfferModel get bestOffer;
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false, defaultValue: false)
+  bool get isFavorite;
 
   /// Create a copy of HotelModel
   /// with the given fields replaced by the non-null parameter values.

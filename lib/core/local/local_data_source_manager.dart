@@ -1,4 +1,5 @@
 import 'package:booking_hotel/core/data/models/hotel_model.dart';
+import 'package:booking_hotel/core/error/exceptions.dart';
 import 'package:hive/hive.dart';
 
 class LocalDataSourceManager {
@@ -36,15 +37,39 @@ class LocalDataSourceManager {
 
   /// Methods for Favorites
   List<HotelModel> getFavoriteHotels() {
-    return _favoritesBox.values.toList().cast<HotelModel>();
+    try {
+      return _favoritesBox.values.toList().cast<HotelModel>();
+    } catch (e) {
+      throw CacheException(
+        errorType: 'cacheException getFavoriteHotels',
+        message: e.toString(),
+        error: e,
+      );
+    }
   }
 
-  void addFavoriteHotel(HotelModel hotel) {
-    _favoritesBox.put(hotel.hotelId, hotel);
+  Future<void> addFavoriteHotel(HotelModel hotel) async {
+    try {
+      await _favoritesBox.put(hotel.hotelId, hotel);
+    } catch (e) {
+      throw CacheException(
+        errorType: 'cacheException addFavoriteHotel',
+        message: e.toString(),
+        error: e,
+      );
+    }
   }
 
-  void removeFavoriteHotel(String hotelId) {
-    _favoritesBox.delete(hotelId);
+  Future<void> removeFavoriteHotel(String hotelId) async {
+    try {
+      await _favoritesBox.delete(hotelId);
+    } catch (e) {
+      throw CacheException(
+        errorType: 'cacheException removeFavoriteHotel',
+        message: e.toString(),
+        error: e,
+      );
+    }
   }
 
   bool isFavoriteHotel(String hotelId) {

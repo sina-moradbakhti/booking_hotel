@@ -12,6 +12,12 @@
     "flight_abvr": "Flug",
     "per_person_abvr": "p.P.",
     "from": "ab",
-    "hotels_page_title": "{} Hotels für {}"
+    "hotels_page_title": "{} Hotels für {}",
+    "favorites_page_empty": "Ihr Favoriten-Liste ist leer",
+    "favorite_hotel_error": "Favoriten-Hotel fehlgeschlagen",
+    "unfavorite_hotel_error": "Hotel konnte nicht aus den Favoriten entfernt werden",
+    "favorite_hotel_success": "{} hinzugefügen",
+    "unfavorite_hotel_success": "{} entfernen",
+    "fetch_favorite_hotels_error": "Favoriten-Hotels fehlgeschlagen",
+    "fetch_hotels_error": "Hotels fehlgeschlagen"
 }
-

@@ -5,8 +5,10 @@ part 'hotel_state.freezed.dart';
 
 @freezed
 class HotelState with _$HotelState {
-  const factory HotelState.initial() = HotelInitial;
-  const factory HotelState.loading() = HotelLoading;
+  const factory HotelState.initial(
+      {@Default(null) HotelResponseModel? hotels}) = HotelInitial;
+  const factory HotelState.loading({HotelResponseModel? hotels}) = HotelLoading;
   const factory HotelState.loaded(HotelResponseModel hotels) = HotelLoaded;
-  const factory HotelState.error(String message) = HotelError;
+  const factory HotelState.error(String message, {HotelResponseModel? hotels}) =
+      HotelError;
 }

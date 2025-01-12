@@ -1,5 +1,8 @@
 import 'package:booking_hotel/core/local/local_data_source_manager.dart';
 import 'package:booking_hotel/core/utils/constants.dart';
+import 'package:booking_hotel/features/favorites/data/datasources/favorites_local_data_source.dart';
+import 'package:booking_hotel/features/favorites/data/repositories/favorites_repository_impl.dart';
+import 'package:booking_hotel/features/favorites/domain/repositories/favorites_repository.dart';
 import 'package:booking_hotel/features/hotels/data/datasources/hotel_remote_data_source.dart';
 import 'package:booking_hotel/features/hotels/data/repositories/hotel_repository_impl.dart';
 import 'package:booking_hotel/features/hotels/domain/repositories/hotel_repository.dart';
@@ -26,7 +29,17 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton(
     () => LocalDataSourceManager(
       defaultAppLanguage: Constants.defaultAppLanguage.languageCode,
-      appSettingsBox: sl<Box>(instanceName: Constants.localCacheAppSettingsBoxName),
+      appSettingsBox:
+          sl<Box>(instanceName: Constants.localCacheAppSettingsBoxName),
+      favoritesBox: sl<Box>(instanceName: Constants.localCacheFavoritesBoxName),
+    ),
+  );
+
+  /// Local Data sources
+  sl.registerLazySingleton(
+    () => FavoritesLocalDataSource(
+      appSettingsBox:
+          sl<Box>(instanceName: Constants.localCacheAppSettingsBoxName),
       favoritesBox: sl<Box>(instanceName: Constants.localCacheFavoritesBoxName),
     ),
   );
@@ -35,6 +48,13 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton<HotelRepository>(
     () => HotelRepositoryImpl(
       remoteDataSource: sl<HotelRemoteDataSource>(),
+      favoritesLocalDataSource: sl<FavoritesLocalDataSource>(),
+    ),
+  );
+
+  sl.registerLazySingleton<FavoritesRepository>(
+    () => FavoritesRepositoryImpl(
+      localDataSource: sl<FavoritesLocalDataSource>(),
     ),
   );
 }

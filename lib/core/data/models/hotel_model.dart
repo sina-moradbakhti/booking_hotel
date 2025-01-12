@@ -28,6 +28,13 @@ class HotelModel with _$HotelModel {
     @HiveField(9)
     @JsonKey(name: 'best-offer')
     required BestOfferModel bestOffer,
+    @Default(false)
+    @JsonKey(
+      includeFromJson: false,
+      includeToJson: false,
+      defaultValue: false,
+    )
+    bool isFavorite,
   }) = _HotelModel;
 
   factory HotelModel.fromJson(Map<String, dynamic> json) =>

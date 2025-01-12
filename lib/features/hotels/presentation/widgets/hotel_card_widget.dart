@@ -1,54 +1,126 @@
 import 'package:booking_hotel/core/data/models/hotel_model.dart';
+import 'package:booking_hotel/core/gen/assets.gen.dart';
 import 'package:booking_hotel/core/utils/extensions.dart';
+import 'package:booking_hotel/features/favorites/presentation/bloc/favorites_bloc.dart';
+import 'package:booking_hotel/features/favorites/presentation/bloc/favorites_event.dart';
+import 'package:booking_hotel/features/hotels/presentation/bloc/hotel_bloc.dart';
+import 'package:booking_hotel/features/hotels/presentation/bloc/hotel_event.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HotelCardWidget extends StatelessWidget {
   final HotelModel hotel;
+  final bool isFavoritedCard;
 
   const HotelCardWidget({
     super.key,
     required this.hotel,
+    this.isFavoritedCard = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 12.0,
-            offset: const Offset(-1, 2),
-          ),
-        ],
+        boxShadow: [_lightShadow],
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
       ),
       clipBehavior: Clip.hardEdge,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.max,
+      child: Stack(
         children: [
-          Image.network(
-            hotel.images.first.small,
-            height: 200,
-            width: double.infinity,
-            fit: BoxFit.cover,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Image.network(
+                hotel.images.first.small,
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+              _buildPropertyInfo(),
+              Padding(
+                padding: const EdgeInsets.all(16.0).copyWith(
+                  top: 0,
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // TODO: to_the_offers
+                  },
+                  child: const Text('to_the_offers').tr(),
+                ),
+              ),
+            ],
           ),
-          _buildPropertyInfo(),
-          Padding(
-            padding: const EdgeInsets.all(16.0).copyWith(
-              top: 0,
-            ),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text('to_the_offers').tr(),
+          Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              onPressed: () {
+                if (isFavoritedCard) {
+                  context.read<FavoritesBloc>().add(
+                        FavoritesEvent.unfavoriteHotel(hotel),
+                      );
+                  context.read<HotelBloc>().add(
+                        HotelEvent.updateHotel(
+                          hotel.copyWith(
+                            isFavorite: false,
+                          ),
+                        ),
+                      );
+                } else {
+                  if (hotel.isFavorite) {
+                    context.read<FavoritesBloc>().add(
+                          FavoritesEvent.unfavoriteHotel(hotel),
+                        );
+                  } else {
+                    context.read<FavoritesBloc>().add(
+                          FavoritesEvent.favoriteHotel(hotel),
+                        );
+                  }
+                }
+              },
+              icon: _icon,
             ),
           ),
         ],
       ),
     );
+  }
+
+  Widget get _icon {
+    if (isFavoritedCard) {
+      return Assets.svg.filledFavoriteIcon.svg(
+        width: 22.0,
+        height: 22.0,
+        fit: BoxFit.cover,
+        colorFilter: const ColorFilter.mode(
+          Colors.white,
+          BlendMode.srcIn,
+        ),
+      );
+    } else {
+      return hotel.isFavorite
+          ? Assets.svg.filledFavoriteIcon.svg(
+              width: 22.0,
+              height: 22.0,
+              fit: BoxFit.cover,
+              colorFilter: const ColorFilter.mode(
+                Colors.white,
+                BlendMode.srcIn,
+              ),
+            )
+          : Assets.svg.favoritesIcon.svg(
+              width: 22.0,
+              height: 22.0,
+              fit: BoxFit.cover,
+              colorFilter: const ColorFilter.mode(
+                Colors.white,
+                BlendMode.srcIn,
+              ),
+            );
+    }
   }
 
   Widget _buildPropertyInfo() {
@@ -194,5 +266,11 @@ class HotelCardWidget extends StatelessWidget {
         fontWeight: FontWeight.w400,
         color: Color(0xff595959),
         letterSpacing: -0.2,
+      );
+
+  BoxShadow get _lightShadow => BoxShadow(
+        color: Colors.black.withOpacity(0.1),
+        blurRadius: 12.0,
+        offset: const Offset(-1, 2),
       );
 }

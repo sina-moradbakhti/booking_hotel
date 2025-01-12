@@ -27,4 +27,29 @@ class ServerException implements Exception {
   }
 }
 
-class CacheException implements Exception {}
+class CacheException implements Exception {
+  final String? message;
+  final String? errorType;
+  final dynamic error;
+
+  CacheException({
+    this.message,
+    this.errorType,
+    this.error,
+  });
+
+  void logError() {
+    Logger().e(toString());
+  }
+
+  @override
+  String toString() {
+    if (message != null) {
+      return '${errorType ?? 'CacheException'}: $message';
+    } else if (error != null) {
+      return '${errorType ?? 'CacheException'}: $error';
+    } else {
+      return errorType ?? 'CacheException';
+    }
+  }
+}

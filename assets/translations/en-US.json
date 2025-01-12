@@ -12,5 +12,12 @@
     "flight_abvr": "Flt",
     "per_person_abvr": "p.P.",
     "from": "From",
-    "hotels_page_title": "{} Hotels in {}"
+    "hotels_page_title": "{} Hotels in {}",
+    "favorites_page_empty": "Your favorite list is empty",
+    "favorite_hotel_error": "Failed to favorite hotel",
+    "unfavorite_hotel_error": "Failed to unfavorite hotel",
+    "favorite_hotel_success": "{} added to favorites",
+    "unfavorite_hotel_success": "{} removed from favorites",
+    "fetch_favorite_hotels_error": "Failed to fetch favorite hotels",
+    "fetch_hotels_error": "Failed to fetch hotels"
 }

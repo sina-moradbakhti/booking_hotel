@@ -8,4 +8,8 @@ class ServerFailure extends Failure {
   ServerFailure({required this.exception});
 }
 
-class CacheFailure extends Failure {}
+class CacheFailure extends Failure {
+  final CacheException exception;
+
+  CacheFailure({required this.exception});
+}

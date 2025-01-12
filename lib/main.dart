@@ -3,6 +3,8 @@ import 'package:booking_hotel/core/utils/extensions.dart';
 import 'package:booking_hotel/core/utils/routes.dart';
 import 'package:booking_hotel/core/utils/theme.dart';
 import 'package:booking_hotel/di/service_locator.dart';
+import 'package:booking_hotel/features/favorites/domain/repositories/favorites_repository.dart';
+import 'package:booking_hotel/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:booking_hotel/features/hotels/domain/repositories/hotel_repository.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,7 @@ import 'package:booking_hotel/features/overview/presentation/pages/overview_page
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import 'features/hotels/presentation/bloc/hotel.bloc.dart';
+import 'features/hotels/presentation/bloc/hotel_bloc.dart';
 
 part 'router.dart';
 
@@ -37,6 +39,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => HotelBloc(
             repo: sl<HotelRepository>(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => FavoritesBloc(
+            repo: sl<FavoritesRepository>(),
           ),
         ),
       ],

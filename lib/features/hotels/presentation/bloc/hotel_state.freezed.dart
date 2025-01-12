@@ -16,28 +16,29 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HotelState {
+  HotelResponseModel? get hotels => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(HotelResponseModel? hotels) initial,
+    required TResult Function(HotelResponseModel? hotels) loading,
     required TResult Function(HotelResponseModel hotels) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(String message, HotelResponseModel? hotels) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(HotelResponseModel? hotels)? initial,
+    TResult? Function(HotelResponseModel? hotels)? loading,
     TResult? Function(HotelResponseModel hotels)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(String message, HotelResponseModel? hotels)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(HotelResponseModel? hotels)? initial,
+    TResult Function(HotelResponseModel? hotels)? loading,
     TResult Function(HotelResponseModel hotels)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(String message, HotelResponseModel? hotels)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +67,12 @@ mixin _$HotelState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Create a copy of HotelState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HotelStateCopyWith<HotelState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -73,6 +80,10 @@ abstract class $HotelStateCopyWith<$Res> {
   factory $HotelStateCopyWith(
           HotelState value, $Res Function(HotelState) then) =
       _$HotelStateCopyWithImpl<$Res, HotelState>;
+  @useResult
+  $Res call({HotelResponseModel hotels});
+
+  $HotelResponseModelCopyWith<$Res>? get hotels;
 }
 
 /// @nodoc
@@ -87,13 +98,46 @@ class _$HotelStateCopyWithImpl<$Res, $Val extends HotelState>
 
   /// Create a copy of HotelState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hotels = null,
+  }) {
+    return _then(_value.copyWith(
+      hotels: null == hotels
+          ? _value.hotels!
+          : hotels // ignore: cast_nullable_to_non_nullable
+              as HotelResponseModel,
+    ) as $Val);
+  }
+
+  /// Create a copy of HotelState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $HotelResponseModelCopyWith<$Res>? get hotels {
+    if (_value.hotels == null) {
+      return null;
+    }
+
+    return $HotelResponseModelCopyWith<$Res>(_value.hotels!, (value) {
+      return _then(_value.copyWith(hotels: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$HotelInitialImplCopyWith<$Res> {
+abstract class _$$HotelInitialImplCopyWith<$Res>
+    implements $HotelStateCopyWith<$Res> {
   factory _$$HotelInitialImplCopyWith(
           _$HotelInitialImpl value, $Res Function(_$HotelInitialImpl) then) =
       __$$HotelInitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({HotelResponseModel? hotels});
+
+  @override
+  $HotelResponseModelCopyWith<$Res>? get hotels;
 }
 
 /// @nodoc
@@ -106,60 +150,86 @@ class __$$HotelInitialImplCopyWithImpl<$Res>
 
   /// Create a copy of HotelState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hotels = freezed,
+  }) {
+    return _then(_$HotelInitialImpl(
+      hotels: freezed == hotels
+          ? _value.hotels
+          : hotels // ignore: cast_nullable_to_non_nullable
+              as HotelResponseModel?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$HotelInitialImpl implements HotelInitial {
-  const _$HotelInitialImpl();
+  const _$HotelInitialImpl({this.hotels = null});
+
+  @override
+  @JsonKey()
+  final HotelResponseModel? hotels;
 
   @override
   String toString() {
-    return 'HotelState.initial()';
+    return 'HotelState.initial(hotels: $hotels)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HotelInitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HotelInitialImpl &&
+            (identical(other.hotels, hotels) || other.hotels == hotels));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, hotels);
+
+  /// Create a copy of HotelState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HotelInitialImplCopyWith<_$HotelInitialImpl> get copyWith =>
+      __$$HotelInitialImplCopyWithImpl<_$HotelInitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(HotelResponseModel? hotels) initial,
+    required TResult Function(HotelResponseModel? hotels) loading,
     required TResult Function(HotelResponseModel hotels) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(String message, HotelResponseModel? hotels) error,
   }) {
-    return initial();
+    return initial(hotels);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(HotelResponseModel? hotels)? initial,
+    TResult? Function(HotelResponseModel? hotels)? loading,
     TResult? Function(HotelResponseModel hotels)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(String message, HotelResponseModel? hotels)? error,
   }) {
-    return initial?.call();
+    return initial?.call(hotels);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(HotelResponseModel? hotels)? initial,
+    TResult Function(HotelResponseModel? hotels)? loading,
     TResult Function(HotelResponseModel hotels)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(String message, HotelResponseModel? hotels)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial();
+      return initial(hotels);
     }
     return orElse();
   }
@@ -203,14 +273,32 @@ class _$HotelInitialImpl implements HotelInitial {
 }
 
 abstract class HotelInitial implements HotelState {
-  const factory HotelInitial() = _$HotelInitialImpl;
+  const factory HotelInitial({final HotelResponseModel? hotels}) =
+      _$HotelInitialImpl;
+
+  @override
+  HotelResponseModel? get hotels;
+
+  /// Create a copy of HotelState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HotelInitialImplCopyWith<_$HotelInitialImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HotelLoadingImplCopyWith<$Res> {
+abstract class _$$HotelLoadingImplCopyWith<$Res>
+    implements $HotelStateCopyWith<$Res> {
   factory _$$HotelLoadingImplCopyWith(
           _$HotelLoadingImpl value, $Res Function(_$HotelLoadingImpl) then) =
       __$$HotelLoadingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({HotelResponseModel? hotels});
+
+  @override
+  $HotelResponseModelCopyWith<$Res>? get hotels;
 }
 
 /// @nodoc
@@ -223,60 +311,85 @@ class __$$HotelLoadingImplCopyWithImpl<$Res>
 
   /// Create a copy of HotelState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hotels = freezed,
+  }) {
+    return _then(_$HotelLoadingImpl(
+      hotels: freezed == hotels
+          ? _value.hotels
+          : hotels // ignore: cast_nullable_to_non_nullable
+              as HotelResponseModel?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$HotelLoadingImpl implements HotelLoading {
-  const _$HotelLoadingImpl();
+  const _$HotelLoadingImpl({this.hotels});
+
+  @override
+  final HotelResponseModel? hotels;
 
   @override
   String toString() {
-    return 'HotelState.loading()';
+    return 'HotelState.loading(hotels: $hotels)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HotelLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$HotelLoadingImpl &&
+            (identical(other.hotels, hotels) || other.hotels == hotels));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, hotels);
+
+  /// Create a copy of HotelState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HotelLoadingImplCopyWith<_$HotelLoadingImpl> get copyWith =>
+      __$$HotelLoadingImplCopyWithImpl<_$HotelLoadingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(HotelResponseModel? hotels) initial,
+    required TResult Function(HotelResponseModel? hotels) loading,
     required TResult Function(HotelResponseModel hotels) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(String message, HotelResponseModel? hotels) error,
   }) {
-    return loading();
+    return loading(hotels);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(HotelResponseModel? hotels)? initial,
+    TResult? Function(HotelResponseModel? hotels)? loading,
     TResult? Function(HotelResponseModel hotels)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(String message, HotelResponseModel? hotels)? error,
   }) {
-    return loading?.call();
+    return loading?.call(hotels);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(HotelResponseModel? hotels)? initial,
+    TResult Function(HotelResponseModel? hotels)? loading,
     TResult Function(HotelResponseModel hotels)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(String message, HotelResponseModel? hotels)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading();
+      return loading(hotels);
     }
     return orElse();
   }
@@ -320,17 +433,31 @@ class _$HotelLoadingImpl implements HotelLoading {
 }
 
 abstract class HotelLoading implements HotelState {
-  const factory HotelLoading() = _$HotelLoadingImpl;
+  const factory HotelLoading({final HotelResponseModel? hotels}) =
+      _$HotelLoadingImpl;
+
+  @override
+  HotelResponseModel? get hotels;
+
+  /// Create a copy of HotelState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HotelLoadingImplCopyWith<_$HotelLoadingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HotelLoadedImplCopyWith<$Res> {
+abstract class _$$HotelLoadedImplCopyWith<$Res>
+    implements $HotelStateCopyWith<$Res> {
   factory _$$HotelLoadedImplCopyWith(
           _$HotelLoadedImpl value, $Res Function(_$HotelLoadedImpl) then) =
       __$$HotelLoadedImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({HotelResponseModel hotels});
 
+  @override
   $HotelResponseModelCopyWith<$Res> get hotels;
 }
 
@@ -403,10 +530,10 @@ class _$HotelLoadedImpl implements HotelLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(HotelResponseModel? hotels) initial,
+    required TResult Function(HotelResponseModel? hotels) loading,
     required TResult Function(HotelResponseModel hotels) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(String message, HotelResponseModel? hotels) error,
   }) {
     return loaded(hotels);
   }
@@ -414,10 +541,10 @@ class _$HotelLoadedImpl implements HotelLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(HotelResponseModel? hotels)? initial,
+    TResult? Function(HotelResponseModel? hotels)? loading,
     TResult? Function(HotelResponseModel hotels)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(String message, HotelResponseModel? hotels)? error,
   }) {
     return loaded?.call(hotels);
   }
@@ -425,10 +552,10 @@ class _$HotelLoadedImpl implements HotelLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(HotelResponseModel? hotels)? initial,
+    TResult Function(HotelResponseModel? hotels)? loading,
     TResult Function(HotelResponseModel hotels)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(String message, HotelResponseModel? hotels)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -479,22 +606,29 @@ abstract class HotelLoaded implements HotelState {
   const factory HotelLoaded(final HotelResponseModel hotels) =
       _$HotelLoadedImpl;
 
+  @override
   HotelResponseModel get hotels;
 
   /// Create a copy of HotelState
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HotelLoadedImplCopyWith<_$HotelLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HotelErrorImplCopyWith<$Res> {
+abstract class _$$HotelErrorImplCopyWith<$Res>
+    implements $HotelStateCopyWith<$Res> {
   factory _$$HotelErrorImplCopyWith(
           _$HotelErrorImpl value, $Res Function(_$HotelErrorImpl) then) =
       __$$HotelErrorImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({String message});
+  $Res call({String message, HotelResponseModel? hotels});
+
+  @override
+  $HotelResponseModelCopyWith<$Res>? get hotels;
 }
 
 /// @nodoc
@@ -511,12 +645,17 @@ class __$$HotelErrorImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? hotels = freezed,
   }) {
     return _then(_$HotelErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      hotels: freezed == hotels
+          ? _value.hotels
+          : hotels // ignore: cast_nullable_to_non_nullable
+              as HotelResponseModel?,
     ));
   }
 }
@@ -524,14 +663,16 @@ class __$$HotelErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HotelErrorImpl implements HotelError {
-  const _$HotelErrorImpl(this.message);
+  const _$HotelErrorImpl(this.message, {this.hotels});
 
   @override
   final String message;
+  @override
+  final HotelResponseModel? hotels;
 
   @override
   String toString() {
-    return 'HotelState.error(message: $message)';
+    return 'HotelState.error(message: $message, hotels: $hotels)';
   }
 
   @override
@@ -539,11 +680,12 @@ class _$HotelErrorImpl implements HotelError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HotelErrorImpl &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.hotels, hotels) || other.hotels == hotels));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, message, hotels);
 
   /// Create a copy of HotelState
   /// with the given fields replaced by the non-null parameter values.
@@ -556,36 +698,36 @@ class _$HotelErrorImpl implements HotelError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function(HotelResponseModel? hotels) initial,
+    required TResult Function(HotelResponseModel? hotels) loading,
     required TResult Function(HotelResponseModel hotels) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(String message, HotelResponseModel? hotels) error,
   }) {
-    return error(message);
+    return error(message, hotels);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function(HotelResponseModel? hotels)? initial,
+    TResult? Function(HotelResponseModel? hotels)? loading,
     TResult? Function(HotelResponseModel hotels)? loaded,
-    TResult? Function(String message)? error,
+    TResult? Function(String message, HotelResponseModel? hotels)? error,
   }) {
-    return error?.call(message);
+    return error?.call(message, hotels);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function(HotelResponseModel? hotels)? initial,
+    TResult Function(HotelResponseModel? hotels)? loading,
     TResult Function(HotelResponseModel hotels)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(String message, HotelResponseModel? hotels)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(message, hotels);
     }
     return orElse();
   }
@@ -629,12 +771,16 @@ class _$HotelErrorImpl implements HotelError {
 }
 
 abstract class HotelError implements HotelState {
-  const factory HotelError(final String message) = _$HotelErrorImpl;
+  const factory HotelError(final String message,
+      {final HotelResponseModel? hotels}) = _$HotelErrorImpl;
 
   String get message;
+  @override
+  HotelResponseModel? get hotels;
 
   /// Create a copy of HotelState
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HotelErrorImplCopyWith<_$HotelErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
