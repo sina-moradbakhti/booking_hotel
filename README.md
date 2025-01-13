@@ -2,8 +2,6 @@
 
 This Flutter application is a hotel booking platform that allows users to browse available hotels and manage their favorites. It follows Clean Architecture principles, leverages Bloc for state management, and includes both unit tests and widget tests to ensure robustness.
 
-<img src="book_hotel_demo.gif" alt="Demo gif" height="400" />
-
 ### Watch Demo (video)
 [Watch the video](https://github.com/sina-moradbakhti/booking_hotel/blob/main/book_hotel_demo.mp4)
 
