@@ -7,6 +7,9 @@ This Flutter application is a hotel booking platform that allows users to browse
   Your browser does not support the video tag.
 </video>
 
+### Watch Demo (video)
+[Watch the video](https://github.com/sina-moradbakhti/booking_hotel/blob/main/book_hotel_demo.mp4)
+
 
 ## Features
 
