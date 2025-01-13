@@ -5,6 +5,8 @@ final _router = GoRouter(
   routes: [
     ShellRoute(
       builder: (context, state, child) {
+        final navbarTheme = Theme.of(context).bottomNavigationBarTheme;
+
         return BlocBuilder<LocaleCubit, Locale>(
           builder: (_, __) => Scaffold(
             appBar: AppBar(
@@ -28,21 +30,79 @@ final _router = GoRouter(
               },
               items: [
                 BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.home,
+                  icon: Assets.svg.homeIcon.svg(
+                    width: navbarTheme.unselectedIconTheme?.size,
+                    height: navbarTheme.unselectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.unselectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                  activeIcon: Assets.svg.homeIcon.svg(
+                    width: navbarTheme.selectedIconTheme?.size,
+                    height: navbarTheme.selectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.selectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
                   ),
                   label: 'overview'.tr(),
                 ),
                 BottomNavigationBarItem(
-                  icon: const Icon(Icons.hotel),
+                  icon: Assets.svg.searchIcon.svg(
+                    width: navbarTheme.unselectedIconTheme?.size,
+                    height: navbarTheme.unselectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.unselectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                  activeIcon: Assets.svg.searchIcon.svg(
+                    width: navbarTheme.selectedIconTheme?.size,
+                    height: navbarTheme.selectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.selectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                   label: 'hotels'.tr(),
                 ),
                 BottomNavigationBarItem(
-                  icon: const Icon(Icons.favorite),
+                  icon: Assets.svg.favoritesIcon.svg(
+                    width: navbarTheme.unselectedIconTheme?.size,
+                    height: navbarTheme.unselectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.unselectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                  activeIcon: Assets.svg.favoritesIcon.svg(
+                    width: navbarTheme.selectedIconTheme?.size,
+                    height: navbarTheme.selectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.selectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                   label: 'favorites'.tr(),
                 ),
                 BottomNavigationBarItem(
-                  icon: const Icon(Icons.person),
+                  icon: Assets.svg.accountIcon.svg(
+                    width: navbarTheme.unselectedIconTheme?.size,
+                    height: navbarTheme.unselectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.unselectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                  activeIcon: Assets.svg.accountIcon.svg(
+                    width: navbarTheme.selectedIconTheme?.size,
+                    height: navbarTheme.selectedIconTheme?.size,
+                    colorFilter: ColorFilter.mode(
+                      navbarTheme.selectedItemColor!,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                   label: 'account'.tr(),
                 ),
               ],

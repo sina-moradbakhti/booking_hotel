@@ -1,4 +1,5 @@
 import 'package:booking_hotel/app.dart';
+import 'package:booking_hotel/core/gen/assets.gen.dart';
 import 'package:booking_hotel/core/utils/extensions.dart';
 import 'package:booking_hotel/core/utils/routes.dart';
 import 'package:booking_hotel/core/utils/theme.dart';

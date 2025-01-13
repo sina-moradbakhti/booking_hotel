@@ -4,6 +4,7 @@
     "favorites": "Favorites",
     "account": "Account",
     "to_the_offers": "To the offers",
+    "to_the_hotel": "To the hotel",
     "days": "Days",
     "nights": "Nights",
     "adults_abvr": "Ad",
@@ -21,5 +22,6 @@
     "fetch_favorite_hotels_error": "Failed to fetch favorite hotels",
     "fetch_hotels_error": "Failed to fetch hotels",
     "change_language": "Change language",
-    "welcome_text": "Welcome to the app,\n\nwhere you can find the best hotels in the world. to start searching for a hotel, click on the Hotels in the menu."
+    "welcome_text": "Welcome to the app,\n\nwhere you can find the best hotels in the world. to start searching for a hotel, click on the Hotels in the menu.",
+    "review_pattern": "{} ({} reviews)"
 }

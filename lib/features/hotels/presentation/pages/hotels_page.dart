@@ -1,10 +1,10 @@
 import 'package:booking_hotel/core/utils/extensions.dart';
 import 'package:booking_hotel/core/utils/toaster.dart';
 import 'package:booking_hotel/core/widgets/error_widget.dart';
+import 'package:booking_hotel/core/widgets/hotel_card_widget.dart';
 import 'package:booking_hotel/core/widgets/loading_indicator.dart';
 import 'package:booking_hotel/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:booking_hotel/features/favorites/presentation/bloc/favorites_state.dart';
-import 'package:booking_hotel/features/hotels/presentation/widgets/hotel_card_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

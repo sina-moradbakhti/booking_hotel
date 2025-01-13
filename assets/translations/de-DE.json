@@ -4,6 +4,7 @@
     "favorites": "Favoriten",
     "account": "Konto",
     "to_the_offers": "Zu den Angeboten",
+    "to_the_hotel": "Zum Hotel",
     "days": "Tage",
     "nights": "Nächte",
     "adults_abvr": "Erw",
@@ -21,5 +22,6 @@
     "fetch_favorite_hotels_error": "Favoriten-Hotels fehlgeschlagen",
     "fetch_hotels_error": "Hotels fehlgeschlagen",
     "change_language": "Sprache wechseln",
-    "welcome_text": "Willkommen in der App,\n\nwo Sie die besten Hotels in der Welt finden. Um ein Hotel zu finden, klicken Sie auf die Hotels im Menu."
+    "welcome_text": "Willkommen in der App,\n\nwo Sie die besten Hotels in der Welt finden. Um ein Hotel zu finden, klicken Sie auf die Hotels im Menu.",
+    "review_pattern": "{} ({} Bew.)"
 }

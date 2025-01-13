@@ -6,6 +6,7 @@ import 'package:booking_hotel/features/favorites/presentation/bloc/favorites_eve
 import 'package:booking_hotel/features/hotels/presentation/bloc/hotel_bloc.dart';
 import 'package:booking_hotel/features/hotels/presentation/bloc/hotel_event.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,11 +35,35 @@ class HotelCardWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Image.network(
-                hotel.images.first.small,
+              SizedBox(
                 height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
+                child: isFavoritedCard
+                    ? Stack(
+                        children: [
+                          Image.network(
+                            hotel.images.first.small,
+                            height: double.infinity,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 16.0,
+                                left: 8.0,
+                              ),
+                              child: _buildFavoriteCardRating(),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Image.network(
+                        hotel.images.first.small,
+                        height: double.infinity,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
               ),
               _buildPropertyInfo(),
               Padding(
@@ -49,7 +74,9 @@ class HotelCardWidget extends StatelessWidget {
                   onPressed: () {
                     // TODO: to_the_offers
                   },
-                  child: const Text('to_the_offers').tr(),
+                  child: isFavoritedCard
+                      ? const Text('to_the_hotel').tr()
+                      : const Text('to_the_offers').tr(),
                 ),
               ),
             ],
@@ -123,6 +150,59 @@ class HotelCardWidget extends StatelessWidget {
     }
   }
 
+  Widget _buildFavoriteCardRating() {
+    const Color goodRateColor = Color(0xff85BC39);
+    const Color averageRateColor = Color(0xffFF8F16);
+    const Color badRateColor = Color(0xffB00020);
+    const Color veryBadRateColor = Color(0xff888888);
+
+    return Row(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              2.0,
+            ),
+            color: hotel.ratingInfo.score >= 4
+                ? goodRateColor
+                : hotel.ratingInfo.score >= 3
+                    ? averageRateColor
+                    : hotel.ratingInfo.score >= 2
+                        ? badRateColor
+                        : veryBadRateColor,
+          ),
+          padding: const EdgeInsets.all(4.0),
+          child: Row(
+            children: [
+              Assets.svg.smileIcon.svg(),
+              const SizedBox(width: 4.0),
+              Text(
+                '${hotel.ratingInfo.score.toString()} / 5.0',
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 8.0),
+        Text(
+          'review_pattern'.tr(args: [
+            hotel.ratingInfo.scoreDescription.toString(),
+            hotel.ratingInfo.reviewsCount.toString(),
+          ]),
+          style: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildPropertyInfo() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -130,6 +210,27 @@ class HotelCardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: [
+          Row(
+            children: [
+              RatingStars(
+                valueLabelVisibility: false,
+                starSize: 12.5,
+                starColor: Colors.black,
+                starCount: 5,
+                value: hotel.ratingInfo.score,
+              ),
+              const SizedBox(width: 4.0),
+              Assets.svg.helpOutlineIcon.svg(
+                width: 16.0,
+                height: 16.0,
+                colorFilter: const ColorFilter.mode(
+                  Colors.black,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4.0),
           Text(
             hotel.name,
             style: const TextStyle(
