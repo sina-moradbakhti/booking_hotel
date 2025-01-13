@@ -1,10 +1,18 @@
 part of 'main.dart';
 
+void _onTabTapped(
+    BuildContext context, int index, StatefulNavigationShell navigationShell) {
+  navigationShell.goBranch(
+    index,
+    initialLocation: index == navigationShell.currentIndex,
+  );
+}
+
 final _router = GoRouter(
   initialLocation: AppRoutes.overview.path,
   routes: [
-    ShellRoute(
-      builder: (context, state, child) {
+    StatefulShellRoute.indexedStack(
+      builder: (context, state, navigationShell) {
         final navbarTheme = Theme.of(context).bottomNavigationBarTheme;
 
         return BlocBuilder<LocaleCubit, Locale>(
@@ -14,20 +22,10 @@ final _router = GoRouter(
                 state.uri.toAppbarTitle.tr(),
               ),
             ),
-            body: child,
+            body: navigationShell,
             bottomNavigationBar: BottomNavigationBar(
-              currentIndex: state.uri.toIndex,
-              onTap: (index) {
-                if (index == 0) {
-                  context.go(AppRoutes.overview.path);
-                } else if (index == 1) {
-                  context.go(AppRoutes.hotels.path);
-                } else if (index == 2) {
-                  context.go(AppRoutes.favorites.path);
-                } else if (index == 3) {
-                  context.go(AppRoutes.account.path);
-                }
-              },
+              currentIndex: navigationShell.currentIndex,
+              onTap: (index) => _onTabTapped(context, index, navigationShell),
               items: [
                 BottomNavigationBarItem(
                   icon: Assets.svg.homeIcon.svg(
@@ -110,22 +108,38 @@ final _router = GoRouter(
           ),
         );
       },
-      routes: [
-        GoRoute(
-          path: AppRoutes.overview.path,
-          builder: (_, __) => const OverviewPage(),
+      branches: [
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: AppRoutes.overview.path,
+              builder: (_, __) => const OverviewPage(),
+            ),
+          ],
         ),
-        GoRoute(
-          path: AppRoutes.hotels.path,
-          builder: (_, __) => const HotelsPage(),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: AppRoutes.hotels.path,
+              builder: (_, __) => const HotelsPage(),
+            ),
+          ],
         ),
-        GoRoute(
-          path: AppRoutes.favorites.path,
-          builder: (_, __) => const FavoritesPage(),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: AppRoutes.favorites.path,
+              builder: (_, __) => const FavoritesPage(),
+            ),
+          ],
         ),
-        GoRoute(
-          path: AppRoutes.account.path,
-          builder: (_, __) => const AccountPage(),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: AppRoutes.account.path,
+              builder: (_, __) => const AccountPage(),
+            ),
+          ],
         ),
       ],
     ),

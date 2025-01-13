@@ -27,10 +27,8 @@ class HotelBloc extends Bloc<HotelEvent, HotelState> {
                 )
                 .toList(),
           )));
-        },
+        }, // end of updateHotel
       );
     });
-
-    add(const HotelEvent.fetchHotels());
   }
 }

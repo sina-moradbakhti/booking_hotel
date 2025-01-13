@@ -60,7 +60,5 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         }, // end of favoriteHotel
       );
     });
-
-    add(const FavoritesEvent.fetchFavoritesHotels());
   }
 }

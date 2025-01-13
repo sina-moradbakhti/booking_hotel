@@ -13,8 +13,21 @@ import '../bloc/hotel_bloc.dart';
 import '../bloc/hotel_event.dart';
 import '../bloc/hotel_state.dart';
 
-class HotelsPage extends StatelessWidget {
+class HotelsPage extends StatefulWidget {
   const HotelsPage({super.key});
+
+  @override
+  State<HotelsPage> createState() => _HotelsPageState();
+}
+
+class _HotelsPageState extends State<HotelsPage> {
+  @override
+  void initState() {
+    context.read<HotelBloc>().add(
+          const HotelEvent.fetchHotels(),
+        );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

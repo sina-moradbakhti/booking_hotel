@@ -10,8 +10,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/favorites_bloc.dart';
 import '../bloc/favorites_state.dart';
 
-class FavoritesPage extends StatelessWidget {
+class FavoritesPage extends StatefulWidget {
   const FavoritesPage({super.key});
+
+  @override
+  State<FavoritesPage> createState() => _FavoritesPageState();
+}
+
+class _FavoritesPageState extends State<FavoritesPage> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<FavoritesBloc>().add(
+          const FavoritesEvent.fetchFavoritesHotels(),
+        );
+  }
 
   @override
   Widget build(BuildContext context) {
